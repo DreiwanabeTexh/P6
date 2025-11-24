@@ -1,1 +1,20 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Custom Font: Space Surfer (Placed AFTER Tailwind directives) --- */
+@font-face {
+  font-family: 'Space Surfer';
+  src: url('https://db.onlinewebfonts.com/t/203487f5e8869c9b4e7e6027a0525712.eot');
+  src: url('https://db.onlinewebfonts.com/t/203487f5e8869c9b4e7e6027a0525712.eot?#iefix') format('embedded-opentype'),
+       url('https://db.onlinewebfonts.com/t/203487f5e8869c9b4e7e6027a0525712.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/203487f5e8869c9b4e7e6027a0525712.woff') format('woff'),
+       url('https://db.onlinewebfonts.com/t/203487f5e8869c9b4e7e6027a0525712.ttf') format('truetype'),
+       url('https://db.onlinewebfonts.com/t/203487f5e8869c9b4e7e6027a0525712.svg#Space Surfer') format('svg');
+}
+
+/* Apply the custom font globally */
+body {
+    font-family: 'Space Surfer', sans-serif !important;
+}
