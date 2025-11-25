@@ -16,5 +16,6 @@
 
 /* Apply the custom font globally */
 body {
-    font-family: 'Space Surfer', sans-serif !important;
+    /* The !important is removed as it's better to let Tailwind's utility classes override when needed */
+    font-family: 'Space Surfer', sans-serif;
 }

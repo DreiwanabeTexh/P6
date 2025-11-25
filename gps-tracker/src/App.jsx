@@ -9,6 +9,10 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, signInAnonymously } from 'firebase/auth';
 import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, query, orderBy } from 'firebase/firestore';
 
+// --- LOGO ASSETS ---
+import BlackTex from './assets/BlackTex.png';
+import WhiteTex from './assets/WhiteTex.png';
+
 // --- MAP IMPORTS: LEAFLET (FREE) ---
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -73,21 +77,15 @@ function RecenterMap({ lat, lng }) {
   return null;
 }
 
-// --- LOGO SVG COMPONENT (The most stable version) ---
+// --- LOGO COMPONENT ---
 const SargeLogo = ({ theme }) => {
   const isDark = theme === 'dark';
-  const color = isDark ? 'white' : '#1f2937'; 
-  const red = '#b91c1c'; 
-  
+  const logoSrc = isDark ? WhiteTex : BlackTex;
+
   return (
-    <div className="flex items-center gap-4">
-      {/* Red Square Graphic */}
-      <div style={{ backgroundColor: red }} className="w-6 h-6 mr-1 rounded-sm shadow-md"></div>
-      
-      <svg width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="24" fontFamily="'Space Surfer', sans-serif" fontSize="26" fontWeight="900" fill={color}>SARGE</text>
-      </svg>
-    </div>
+    // The logo is now a single image that changes with the theme.
+    // The image itself should contain the "SARGE" text.
+    <img src={logoSrc} alt="SARGE Logo" className="h-8 sm:h-10 lg:h-12" />
   );
 };
 
